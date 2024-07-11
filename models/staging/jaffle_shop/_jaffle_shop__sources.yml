@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: clone of a postgress database
     database: raw
     schema: jaffle_shop
     freshness: 
@@ -15,16 +16,20 @@ sources:
 
     tables:
       - name: customers
+        description: raw data
         freshness: null
         columns:
           - name: id
+            description: primary key
             tests:
               - unique
               - not_null
             
       - name: orders
+        description: raw data
         columns:
           - name: id
+            description: primary key
             tests:
               - unique
               - not_null
